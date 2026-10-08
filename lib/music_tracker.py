@@ -6,6 +6,8 @@ class Track():
         # Side effects:
         #   Initialises self.name as name
         #   Initialises self.artist as artist
+        if not isinstance(name, str) or not isinstance(artist, str):
+            raise TypeError("Name and Artist must be a string")
         self.name = name
         self.artist = artist
 
@@ -30,7 +32,8 @@ class MusicLibrary():
         #   track: object
         # Side effects:
         #   adds track to track_list
-        pass
+        return self.track_list.append(track.format())
+        
 
     def view_tracklist(self):
         # Parameters:
